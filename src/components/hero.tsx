@@ -41,7 +41,6 @@ export default function Hero() {
             }
         }).to('.right-leaf', { y: 200}, 0).to('.left-leaf', { y: -200}, 0)
 
-        // Using GSAP's MatchMedia for responsive ScrollTriggers avoids re-running the whole hook on resize
         let mm = gsap.matchMedia();
 
         mm.add({
@@ -69,8 +68,6 @@ export default function Hero() {
                         currentTime: videoRef.current!.duration,
                     });
                 };
-
-                // Check if metadata is already loaded (e.g. from cache)
                 if (videoRef.current.readyState >= 1) {
                     setupVideoAnimation();
                 } else {
