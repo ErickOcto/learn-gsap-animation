@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Mona_Sans, DM_Serif_Text } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const monaSans = Mona_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSerifText = DM_Serif_Text({
+  variable: "--font-serif",
+  weight: ["400"],
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const modernNegra = localFont({
+  src: "../../public/fonts/Modern Negra Demo.ttf",
+  variable: "--font-modern-negra",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${monaSans.variable} ${dmSerifText.variable} ${modernNegra.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

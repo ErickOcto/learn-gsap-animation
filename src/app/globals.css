@@ -1,18 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
-
 @import "tailwindcss";
-
-@font-face {
-    font-family: "Modern Negra";
-    src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
-}
 
 @theme {
     --color-yellow: #e7d393;
     --color-white-100: #efefef;
-    --font-sans: "Mona Sans", sans-serif;
-    --font-modern-negra: "Modern Negra", sans-serif;
-    --font-serif: "DM Serif Text", serif;
+    --font-sans: var(--font-sans), sans-serif;
+    --font-modern-negra: var(--font-modern-negra), sans-serif;
+    --font-serif: var(--font-serif), serif;
 }
 
 html,
@@ -289,7 +282,7 @@ body {
             @apply grid md:grid-cols-4 grid-cols-2 md:gap-20 gap-10 sm:mb-32 mb-20 relative z-10 md:max-w-6xl md:mx-auto;
 
             button {
-                @apply md:text-3xl text-xl pb-2 cursor-pointer hover:text-yellow hover:border-yellow border-b-1 transition-colors font-modern-negra;
+                @apply md:text-3xl text-xl pb-2 cursor-pointer hover:text-yellow hover:border-yellow border-b transition-colors font-modern-negra;
             }
         }
 
