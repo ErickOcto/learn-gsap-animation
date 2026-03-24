@@ -1,9 +1,9 @@
 'use client';
 
-import { allCocktails } from '../../constants/index.js'
 import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
+import { allCocktails } from '../../constants';
 
 const Menu = () => {
  const contentRef = useRef(null);
